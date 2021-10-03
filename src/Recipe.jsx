@@ -8,10 +8,10 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+// import FavoriteIcon from '@mui/icons-material/Favorite';
+// import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+// import MoreVertIcon from '@mui/icons-material/MoreVert';
  
 export default function Recipe({ title, calories, image, ingredients }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -34,11 +34,7 @@ export default function Recipe({ title, calories, image, ingredients }) {
   return (
     <Card >
       <CardHeader
-          action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
+     
         title={title}
       />
       <CardMedia
@@ -48,27 +44,24 @@ export default function Recipe({ title, calories, image, ingredients }) {
         alt=""
       />
       <CardContent>
-        <Typography variant="body2" color="text.secondary" > 
-         <b>Recipe Below </b>
-        </Typography>
-      </CardContent>
-
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
+        <Typography variant="body2" color="text.black"> <br/>
+         <b>Recipe Below  <CardActions >
+         <ExpandMore
+         display="flex"
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
+         <ExpandMoreIcon >
+  </ExpandMoreIcon>
+           </ExpandMore>
+      </CardActions></b>
+     
+        </Typography>
+      </CardContent>
+
+     
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Recipe:</Typography>
@@ -76,7 +69,7 @@ export default function Recipe({ title, calories, image, ingredients }) {
           <ul>
               {ingredients.map(ingredient => (
               <li style={{ fontFamily: "Roboto", textAlign: "left" }}>
-               {ingredient.text}	key={Recipe.url}
+               {ingredient.text}
                </li>
                 ))}
           </ul>
