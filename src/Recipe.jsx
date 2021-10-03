@@ -8,10 +8,7 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
  
 export default function Recipe({ title, calories, image, ingredients }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -34,7 +31,6 @@ export default function Recipe({ title, calories, image, ingredients }) {
   return (
     <Card >
       <CardHeader
-     
         title={title}
       />
       <CardMedia
@@ -57,12 +53,9 @@ export default function Recipe({ title, calories, image, ingredients }) {
   </ExpandMoreIcon>
            </ExpandMore>
       </CardActions></b>
-     
         </Typography>
       </CardContent>
-
-     
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Recipe:</Typography>
           <Typography paragraph>
