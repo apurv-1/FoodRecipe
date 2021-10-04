@@ -9,3 +9,12 @@
   align-items: center;
   min-width: 40%;
 }
+
+/* .recipe__list {
+  list-style: none;
+} */
+.recipe__list li:not(:last-of-type) {
+  border-bottom: 1px solid #c0baba;
+  margin-bottom: 4px;
+  padding: 3px 6px;
+  }

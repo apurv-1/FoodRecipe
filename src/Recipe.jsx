@@ -9,6 +9,7 @@ import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import classes from "./recipe.module.css";
  
 export default function Recipe({ title, calories, image, ingredients }) {
   const [expanded, setExpanded] = React.useState(false);
@@ -39,11 +40,18 @@ export default function Recipe({ title, calories, image, ingredients }) {
         image={image}
         alt=""
       />
-      <CardContent>
+      <CardContent style={{
+           paddingBottom: 0
+           }}>
         <Typography variant="body2" color="text.black"> <br/>
-         <b>Recipe Below  <CardActions >
+         <b>Check Recipe <CardActions style={{
+           display: "flex",
+           justifyContent: "center",
+           width: "55%"
+           }}>
+         {/* <div 
+           > */}
          <ExpandMore
-         display="flex"
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
@@ -52,14 +60,16 @@ export default function Recipe({ title, calories, image, ingredients }) {
          <ExpandMoreIcon >
   </ExpandMoreIcon>
            </ExpandMore>
+           {/* </div> */}
       </CardActions></b>
         </Typography>
       </CardContent>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Recipe:</Typography>
+        <CardContent style={{paddingTop:0,
+        marginTop: "-24px"}}>
+          {/* <Typography paragraph>Recipe:</Typography> */}
           <Typography paragraph>
-          <ul>
+          <ul className= {classes.recipe__list}>
               {ingredients.map(ingredient => (
               <li style={{ fontFamily: "Roboto", textAlign: "left" }}>
                {ingredient.text}
@@ -68,7 +78,7 @@ export default function Recipe({ title, calories, image, ingredients }) {
           </ul>
           </Typography>
             <Typography >
-            <b> Calories : {calories} grams </b>
+            <b> Calories : {Number(calories).toFixed(2)} grams </b>
           </Typography>
         </CardContent>
       </Collapse>
