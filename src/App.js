@@ -53,7 +53,6 @@ const App = () => {
           <Recipe
             key={recipe.recipe.url}
             title={recipe.recipe.label}
-            serves={recipe.recipe.yield}
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}

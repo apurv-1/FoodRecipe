@@ -1,8 +1,8 @@
 import React from "react";
 //import style from "./recipe.module.css";
 
-const Recipe = ({ title, calories, serves, image, ingredients }) => {
-  const cal = Math.round(calories/serves);
+const Recipe = ({ title, calories, image, ingredients }) => {
+  const cal = Math.round(calories);
   return (
     <div className="recipe">
       <img className="image" src={image} alt="" />
@@ -16,8 +16,7 @@ const Recipe = ({ title, calories, serves, image, ingredients }) => {
         ))}
       </ul>
       <p>
-        <div className="nutrition">Serves {serves}</div>
-        <div className="nutrition cals">Calories: {cal}</div>
+        <div className="cals">Calories : {cal} grams</div>
       </p>
     </div>
   );
