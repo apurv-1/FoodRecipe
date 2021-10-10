@@ -96,12 +96,17 @@ body {
   width: 200px;
   margin-top: 20px;
 }
-.cals {
+.nutrition {
+  margin-bottom: 5px;
   padding: 10px;
   border-radius: 20px;
   background-color: #fff;
   font-family: "Roboto";
   font-weight: 900;
+}
+
+.nutrition.cals {
+  margin-bottom: 0px;
 }
 
 .ul-text {
