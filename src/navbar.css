@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+.navbar{
+  width:100vw;
+  height:10vh;
+ background: rgba( 222, 153, 240, 0.45 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 7px );
+-webkit-backdrop-filter: blur( 7px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.nav__name{
+  margin-top:18px;
+  text-align:center;
+  font-size:30px;
+  font-family:'Righteous', cursive;
+  color:white;
+  letter-spacing:2px;
+  
+}

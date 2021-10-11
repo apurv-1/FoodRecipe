@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./recipe";
+import Navbar from "./navbar";
 
 const App = () => {
-  const API_ID = "9819bf01";
-  const API_KEY = "90e71e7e3741b56831e6745ffb819844";
+  const API_ID = "7e71ed09";
+  const API_KEY = "a16af47fe1dc0891932f24129b05f64b";
 
   const [recipes, setRecipe] = useState([]);
   const [search, setSearch] = useState("");
@@ -33,8 +34,9 @@ const App = () => {
 
   return (
     <div className="App">
+     <Navbar />
       <div className="call"></div>
-      <div className="title">Food Recipe</div>
+     
       <form className="search-form" onSubmit={getSearch}>
         <input
           className="search-bar"
@@ -65,3 +67,4 @@ const App = () => {
 };
 
 export default App;
+ //  <div className="title">Food Recipe</div>
